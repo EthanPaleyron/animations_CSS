@@ -2,19 +2,48 @@
 @import "styles";
 @import "design-tokens";
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  @extend %absolute-center;
-  background: gradient(red, blue, 90deg);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-footer {
-  flex: 1;
+header {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  overflow: hidden;
+  .slider {
+    display: flex;
+    width: 300vw;
+    height: 100%;
+    animation: slide 20s infinite ease-out;
+    .slide {
+      display: flex;
+      width: 300vw;
+      img {
+        filter: brightness(60%);
+        height: 100%;
+      }
+    }
+  }
+  h1 {
+    @extend %absolute-center;
+    z-index: 1;
+    color: $w;
+    text-decoration: underline;
+  }
+  @keyframes slide {
+    0%,
+    15%,
+    100% {
+      transform: translateX(0);
+    }
+    25%,
+    40% {
+      transform: translateX(-100vw);
+    }
+    50%,
+    65% {
+      transform: translateX(-200vw);
+    }
+    75%,
+    90% {
+      transform: translateX(-100vw);
+    }
+  }
 }
