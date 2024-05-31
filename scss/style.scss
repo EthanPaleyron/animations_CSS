@@ -47,3 +47,44 @@ header {
     }
   }
 }
+
+.dropdown {
+  margin: 3rem auto;
+  color: #fff;
+  width: 50%;
+  button {
+    font-size: 2rem;
+    width: 100%;
+    background-color: #228b22;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ul {
+    visibility: hidden;
+    background-color: #228b22;
+    padding: 0 1rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    li {
+      border-bottom: solid $w 1px;
+      a {
+        width: 100%;
+        padding: 1rem;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  ul.show {
+    max-height: 500px;
+  }
+  ul.visibility {
+    visibility: visible;
+  }
+}
